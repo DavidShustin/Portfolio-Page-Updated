@@ -62,3 +62,66 @@ body {
  50% { transform: rotate(  0.0deg) }
 100% { transform: rotate(  0.0deg) }
 }
+.welcome-section {
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.welcome-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.welcome-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.welcome-text h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #d0aaff;
+}
+
+.welcome-text p {
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+
+.welcome-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.welcome-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.welcome-text {
+		padding: 0;
+		text-align: center;
+	}
+
+	.welcome-image {
+		margin-top: 2rem;
+	}
+}
