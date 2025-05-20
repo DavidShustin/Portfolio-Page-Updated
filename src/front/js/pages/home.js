@@ -16,10 +16,10 @@ export const Home = () => {
 				<div className="welcome-content">
 					<div className="welcome-text">
 						<h1>
-							Welcome to My Portfolio{" "}
+							Hello There!{" "}
 							<span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
 						</h1>
-						<p>Scroll down to see more</p>
+						<h2>My name is David Shustin</h2>
 					</div>
 
 					<div className="welcome-image">
