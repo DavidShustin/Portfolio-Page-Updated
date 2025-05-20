@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
@@ -7,7 +7,6 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			console.log("🔍 ScrollY:", window.scrollY, "Scrolled State:", window.scrollY > 50);
 			setScrolled(window.scrollY > 50);
 		};
 
@@ -15,32 +14,22 @@ export const Navbar = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-
 	return (
 		<nav className={`custom-navbar ${scrolled ? "scrolled" : "top"}`}>
 			<div className="navbar-content">
-				<div className="nav-left">
-					<Link to="/" className="navbar-brand">Ds.</Link>
-				</div>
-
-				<div className="nav-center">
-					<Link to="/about">About</Link>
-					<Link to="/projects">Projects</Link>
-					<Link to="/contact">Contact</Link>
-				</div>
-
-				<div className="nav-right">
-					<a
-						href="https://github.com/DavidShustin/Portfolio-Page-Updated"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="repo-button"
-					>
-						Repo
-					</a>
+				<span className="navbar-brand">Ds.</span>
+				<div className="nav-links">
+					<ScrollLink to="about" smooth={true} duration={500} offset={-80}>
+						About
+					</ScrollLink>
+					<ScrollLink to="projects" smooth={true} duration={500} offset={-80}>
+						Projects
+					</ScrollLink>
+					<ScrollLink to="contact" smooth={true} duration={500} offset={-80}>
+						Contact
+					</ScrollLink>
 				</div>
 			</div>
 		</nav>
-
 	);
 };
