@@ -13,7 +13,6 @@
   transition: all 0.5s ease;
 }
 
-/* Shrinking effect */
 .custom-navbar.scrolled {
   width: 60%;
   max-width: 800px;
@@ -30,7 +29,7 @@
   position: relative;
 }
 
-/* Left (Logo) */
+/* Left: Logo */
 .nav-left {
   flex: 1;
   display: flex;
@@ -42,23 +41,38 @@
   font-weight: bold;
   color: white;
   text-decoration: none;
-}
-
-/* Center (Main nav links) */
-.nav-center a {
-  all: unset; /* Clears all default link styles */
   cursor: pointer;
-  color: white;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-.nav-center a:hover {
+.navbar-brand:hover {
   color: #bf40bf;
 }
 
-/* Right (Repo button) */
+/* Center: About, Projects, Contact */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.nav-center span {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: inline-block; /* ✅ Acts more like a button/link */
+  padding: 0.25rem 0.5rem; /* Optional: adds hover "feel" */
+}
+
+.nav-center span:hover {
+  color: #bf40bf;
+}
+
+/* Right: GitHub Repo Button */
 .nav-right {
   flex: 1;
   display: flex;
@@ -78,4 +92,16 @@
 .repo-button:hover {
   background: #bf40bf;
   color: white;
+}
+.nav-center .nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0.5rem;
+}
+
+.nav-center .nav-link:hover {
+  color: #bf40bf;
 }

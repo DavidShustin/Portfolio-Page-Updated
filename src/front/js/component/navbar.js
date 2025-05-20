@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";  // ✅ Correct import
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
@@ -9,7 +9,6 @@ export const Navbar = () => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 50);
 		};
-
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
@@ -17,17 +16,57 @@ export const Navbar = () => {
 	return (
 		<nav className={`custom-navbar ${scrolled ? "scrolled" : "top"}`}>
 			<div className="navbar-content">
-				<span className="navbar-brand">Ds.</span>
-				<div className="nav-links">
-					<ScrollLink to="about" smooth={true} duration={500} offset={-80}>
+				<div className="nav-left">
+					<ScrollLink
+						to="home"
+						smooth={true}
+						duration={500}
+						className="navbar-brand"
+						style={{ cursor: "pointer" }}
+					>
+						Ds.
+					</ScrollLink>
+				</div>
+
+				<div className="nav-center">
+					<ScrollLink
+						to="about"
+						smooth={true}
+						duration={500}
+						component="a"        // ✅ Forces rendering as <a>
+						className="nav-link"
+					>
 						About
 					</ScrollLink>
-					<ScrollLink to="projects" smooth={true} duration={500} offset={-80}>
+					<ScrollLink
+						to="projects"
+						smooth={true}
+						duration={500}
+						component="a"
+						className="nav-link"
+					>
 						Projects
 					</ScrollLink>
-					<ScrollLink to="contact" smooth={true} duration={500} offset={-80}>
+					<ScrollLink
+						to="contact"
+						smooth={true}
+						duration={500}
+						component="a"
+						className="nav-link"
+					>
 						Contact
 					</ScrollLink>
+				</div>
+
+				<div className="nav-right">
+					<a
+						href="https://github.com/DavidShustin/Portfolio-Page-Updated"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="repo-button"
+					>
+						This Repo
+					</a>
 				</div>
 			</div>
 		</nav>
