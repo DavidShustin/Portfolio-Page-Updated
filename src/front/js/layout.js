@@ -9,14 +9,25 @@ import { About } from "./pages/about";
 import { Projects } from "./pages/projects";
 import { Contact } from "./pages/contact";
 import injectContext from "./store/appContext";
+import "../styles/layout.css"
 
 
 import { Navbar } from "./component/navbar";
-import Waves from "./component/Waves";
+// import Waves from "./component/Waves";
+import Background from "./component/Background";
 import { Footer } from "./component/footer";
+import { useEffect } from "react";
 
 //create your first component
 const Layout = () => {
+    useEffect(() => {
+        const testScroll = () => {
+            console.log("📦 Layout scrollY:", window.scrollY);
+        };
+
+        window.addEventListener("scroll", testScroll);
+        return () => window.removeEventListener("scroll", testScroll);
+    }, []);
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
@@ -24,21 +35,21 @@ const Layout = () => {
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
-        <div className="layout-container">
+        <div id="page-container">
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-
-                        {/* Wave background here */}
-                    <Waves lineColor="#4ade80" backgroundColor="#121212" />
+                    <Background />
 
                     <Navbar />
-                    <Routes>
-                        <Route element={<Home />} path="/" />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route element={<h1>Not found!</h1>} />
-                    </Routes>
+                    <div id="content-wrap">
+                        <Routes>
+                            <Route element={<Home />} path="/" />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route element={<h1>Not found!</h1>} />
+                        </Routes>
+                    </div>
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>

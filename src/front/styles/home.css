@@ -6,20 +6,23 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.home-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
 /* Content should be above the canvas */
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 10;
   color: white;
+  text-align: center;
+  padding-top: 5rem; /* Add spacing as needed */
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem; /* Increase this value for more space */
+  flex-wrap: nowrap;
+  margin: 2rem 0 6rem 0; /* Optional: Adds space above and below the row */
+}
+.below-cards {
+  margin-top: 7rem; /* or adjust as needed */
   text-align: center;
 }

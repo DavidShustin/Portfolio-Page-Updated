@@ -1,4 +1,8 @@
 //import react into the bundle
+window.addEventListener("scroll", () => {
+    console.log("🧪 Global Scroll Event:", window.scrollY);
+});
+
 import React from "react";
 import ReactDOM from "react-dom";
 
