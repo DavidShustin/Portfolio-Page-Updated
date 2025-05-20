@@ -1,25 +1,34 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import TiltedCard from "../component/tiltedCard";
-import "../../styles/home.css";          // <- Import your home.css
+import "../../styles/home.css";
 
 export const Home = () => {
 	const { store } = useContext(Context);
 
 	return (
-		<div className="home-container">
+		<div id="top" className="home-container">
 
-			<div style={{ height: "200vh", background: "transparent" }}></div>
-			<div className="content text-center">
-				<div style={{ paddingTop: "6rem" }}>
-					<h1>Home Page</h1>
-					<p>Scroll down to trigger navbar effect</p>
+			{/* HOME / WELCOME SECTION */}
+			<section id="home" className="content text-center" style={{ paddingTop: "6rem" }}>
+				<h1>
+					Welcome to My Portfolio{" "}
+					<span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
+				</h1>
+				<p>Scroll down to see more</p>
+			</section>
 
-					{/* TEMP SCROLL TEST BLOCK */}
-					<div style={{ height: "200vh", background: "transparent" }}></div>
-				</div>
-				{/* <div className="card-wrapper mb-5 pb-5"> */}
-				{/* <TiltedCard
+			{/* ABOUT SECTION */}
+			<section id="about" className="section text-center">
+				<h2>About Me</h2>
+				<p>This is the About section. Add your bio or background here.</p>
+			</section>
+
+			{/* PROJECTS SECTION */}
+			<section id="projects" className="section text-center">
+				<h2>Projects</h2>
+				<div className="card-wrapper">
+					<TiltedCard
 						imageSrc="https://wadsworthbruin.com/wp-content/uploads/2024/12/kendrick-900x1200.png"
 						altText="Kendric Lamar GNX"
 						captionText="Kendric Lamar GNX"
@@ -34,112 +43,25 @@ export const Home = () => {
 						containerWidth="300px"
 					/>
 				</div>
-				<div className="below-cards">
-					<div className="alert alert-info">
-						{store.message || "make sure to ask about the navbar and sidebars in the meeting on thursday. Also ask about different websites like ReactBit."}
-					</div>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-				</div>
-				<div>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-					<p>
-						This will be the link to the ReactBits Website{" "}
-						<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-							The ReactBits Site
-						</a>
-					</p>
-				</div> */}
-				{/* <div style={{ height: "200vh", background: "transparent" }}></div>
-				 */}
+			</section>
 
+			{/* CONTACT SECTION */}
+			<section id="contact" className="section text-center">
+				<h2>Contact</h2>
+				<p>Put your email, contact form, or links here.</p>
+			</section>
+
+			{/* OPTIONAL FOOTER / EXTRAS */}
+			<div className="below-cards">
+				<div className="alert alert-info">
+					{store.message || "make sure to ask about the navbar and sidebars in the meeting on thursday."}
+				</div>
+				<p>
+					This will be the link to the ReactBits Website{" "}
+					<a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
+						The ReactBits Site
+					</a>
+				</p>
 			</div>
 		</div>
 	);

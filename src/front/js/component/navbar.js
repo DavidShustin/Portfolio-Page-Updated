@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";  // ✅ Correct import
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
@@ -7,26 +7,55 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			console.log("🔍 ScrollY:", window.scrollY, "Scrolled State:", window.scrollY > 50);
 			setScrolled(window.scrollY > 50);
 		};
-
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-
 
 	return (
 		<nav className={`custom-navbar ${scrolled ? "scrolled" : "top"}`}>
 			<div className="navbar-content">
 				<div className="nav-left">
-					<Link to="/" className="navbar-brand">Ds.</Link>
+					<ScrollLink
+						to="home"
+						smooth={true}
+						duration={500}
+						className="navbar-brand"
+						style={{ cursor: "pointer" }}
+					>
+						Ds.
+					</ScrollLink>
 				</div>
 
 				<div className="nav-center">
-					<Link to="/about">About</Link>
-					<Link to="/projects">Projects</Link>
-					<Link to="/contact">Contact</Link>
+					<ScrollLink
+						to="about"
+						smooth={true}
+						duration={500}
+						component="a"        // ✅ Forces rendering as <a>
+						className="nav-link"
+					>
+						About
+					</ScrollLink>
+					<ScrollLink
+						to="projects"
+						smooth={true}
+						duration={500}
+						component="a"
+						className="nav-link"
+					>
+						Projects
+					</ScrollLink>
+					<ScrollLink
+						to="contact"
+						smooth={true}
+						duration={500}
+						component="a"
+						className="nav-link"
+					>
+						Contact
+					</ScrollLink>
 				</div>
 
 				<div className="nav-right">
@@ -36,11 +65,10 @@ export const Navbar = () => {
 						rel="noopener noreferrer"
 						className="repo-button"
 					>
-						Repo
+						This Repo
 					</a>
 				</div>
 			</div>
 		</nav>
-
 	);
 };
