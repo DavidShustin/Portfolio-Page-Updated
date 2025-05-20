@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
+import { Link as ScrollLink } from "react-scroll";
 import { Context } from "../store/appContext";
 import TiltedCard from "../component/tiltedCard";
 import "../../styles/home.css";
+import avatarImage from "../../img/avatar.png";
 
 export const Home = () => {
 	const { store } = useContext(Context);
@@ -10,12 +12,20 @@ export const Home = () => {
 		<div id="top" className="home-container">
 
 			{/* HOME / WELCOME SECTION */}
-			<section id="home" className="content text-center" style={{ paddingTop: "6rem" }}>
-				<h1>
-					Welcome to My Portfolio{" "}
-					<span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
-				</h1>
-				<p>Scroll down to see more</p>
+			<section id="home" className="welcome-section">
+				<div className="welcome-content">
+					<div className="welcome-text">
+						<h1>
+							Welcome to My Portfolio{" "}
+							<span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
+						</h1>
+						<p>Scroll down to see more</p>
+					</div>
+
+					<div className="welcome-image">
+						<img src={avatarImage} alt="Cartoon character" className="hero-img" />
+					</div>
+				</div>
 			</section>
 
 			{/* ABOUT SECTION */}

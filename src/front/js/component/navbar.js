@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link as ScrollLink } from "react-scroll";  // ✅ Correct import
+import { Link as ScrollLink } from "react-scroll";
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
@@ -33,8 +33,8 @@ export const Navbar = () => {
 						to="about"
 						smooth={true}
 						duration={500}
-						component="a"        // ✅ Forces rendering as <a>
 						className="nav-link"
+						onClick={() => console.log("Scrolling to about...")}
 					>
 						About
 					</ScrollLink>
@@ -42,7 +42,7 @@ export const Navbar = () => {
 						to="projects"
 						smooth={true}
 						duration={500}
-						component="a"
+						// offset={-80}
 						className="nav-link"
 					>
 						Projects
@@ -51,7 +51,7 @@ export const Navbar = () => {
 						to="contact"
 						smooth={true}
 						duration={500}
-						component="a"
+						offset={-80}
 						className="nav-link"
 					>
 						Contact

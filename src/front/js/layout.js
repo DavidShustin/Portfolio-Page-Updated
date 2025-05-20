@@ -5,9 +5,6 @@ import { BackendURL } from "./component/backendURL";
 
 
 import { Home } from './pages/home';
-import { About } from "./pages/about";
-import { Projects } from "./pages/projects";
-import { Contact } from "./pages/contact";
 import injectContext from "./store/appContext";
 import "../styles/layout.css"
 
@@ -42,13 +39,7 @@ const Layout = () => {
 
                     <Navbar />
                     <div id="content-wrap">
-                        <Routes>
-                            <Route element={<Home />} path="/" />
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route element={<h1>Not found!</h1>} />
-                        </Routes>
+                        <Home />
                     </div>
                     <Footer />
                 </ScrollToTop>
