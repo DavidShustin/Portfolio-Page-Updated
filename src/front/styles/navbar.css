@@ -1,28 +1,81 @@
-.shiny-text {
-  background: linear-gradient(
-    90deg,
-
-    #ff6ec4,
-    #7873f5,
-    #4ade80,
-    #7873f5,
-    #ff6ec4
-    
-  );
-  background-size: 400% auto;
-  display: inline-block; 
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent; 
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 10s linear infinite;
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(18, 18, 18, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 0;
+  transition: all 0.5s ease;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 400% center;
-  }
-  100% {
-    background-position: -400% center;
-  }
+/* Shrinking effect */
+.custom-navbar.scrolled {
+  width: 60%;
+  max-width: 800px;
+  padding: 0.75rem 2rem;
+  background: rgba(18, 18, 18, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Left (Logo) */
+.nav-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Center (Main nav links) */
+.nav-center a {
+  all: unset; /* Clears all default link styles */
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: #bf40bf;
+}
+
+/* Right (Repo button) */
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.repo-button {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.repo-button:hover {
+  background: #bf40bf;
+  color: white;
 }

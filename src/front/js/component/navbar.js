@@ -1,33 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../../styles/navbar.css';
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			console.log("🔍 ScrollY:", window.scrollY, "Scrolled State:", window.scrollY > 50);
+			setScrolled(window.scrollY > 50);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/" className="navbar-brand mb-0 h1">
-					Welcome to my Portfolio!
-				</Link>
+		<nav className={`custom-navbar ${scrolled ? "scrolled" : "top"}`}>
+			<div className="navbar-content">
+				<div className="nav-left">
+					<Link to="/" className="navbar-brand">Ds.</Link>
+				</div>
 
-				<div className="dropdown ms-auto">
-					<button
-						className="btn btn-secondary dropdown-toggle"
-						type="button"
-						id="dropdownButton"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
+				<div className="nav-center">
+					<Link to="/about">About</Link>
+					<Link to="/projects">Projects</Link>
+					<Link to="/contact">Contact</Link>
+				</div>
+
+				<div className="nav-right">
+					<a
+						href="https://github.com/DavidShustin/Portfolio-Page-Updated"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="repo-button"
 					>
-						<span className="shiny-text">Here are my links</span>
-					</button>
-					<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownButton">
-						<li><Link className="dropdown-item" to="/about">About</Link></li>
-						<li><Link className="dropdown-item" to="/projects">Projects</Link></li>
-						<li><Link className="dropdown-item" to="/contact">Contact</Link></li>
-					</ul>
-
+						Repo
+					</a>
 				</div>
 			</div>
 		</nav>
+
 	);
 };
