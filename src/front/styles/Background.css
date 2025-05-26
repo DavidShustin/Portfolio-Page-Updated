@@ -16,11 +16,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -1; /* Make sure it's behind the blobs */
   height: 100vh;
   width: 100vw;
-  background: #1a002b; /* deep purple */
+  background: #1a002b; /* Deep purple */
 }
+
 
 @keyframes moveStars {
   from {

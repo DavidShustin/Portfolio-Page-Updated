@@ -4,6 +4,8 @@ import { Context } from "../store/appContext";
 import TiltedCard from "../component/tiltedCard";
 import "../../styles/home.css";
 import avatarImage from "../../img/avatar.png";
+import BlobBackground from "../component/blobBackground";
+
 
 export const Home = () => {
 	const { store } = useContext(Context);
@@ -13,6 +15,14 @@ export const Home = () => {
 
 			{/* HOME / WELCOME SECTION */}
 			<section id="home" className="welcome-section">
+				{/* BLOBS GO HERE */}
+				<div className="home-blobs">
+					<div className="blob blob1"></div>
+					<div className="blob blob2"></div>
+					<div className="blob blob3"></div>
+				</div>
+
+				{/* Your existing welcome content */}
 				<div className="welcome-content">
 					<div className="welcome-text">
 						<h1>
@@ -21,17 +31,40 @@ export const Home = () => {
 						</h1>
 						<h2>My name is David Shustin</h2>
 					</div>
-
 					<div className="welcome-image">
 						<img src={avatarImage} alt="Cartoon character" className="hero-img" />
 					</div>
 				</div>
 			</section>
 
+
 			{/* ABOUT SECTION */}
-			<section id="about" className="section text-center">
-				<h2>About Me</h2>
-				<p>This is the About section. Add your bio or background here.</p>
+			{/* ABOUT SECTION */}
+			<section id="about" className="section about-section">
+				<div className="container d-flex flex-wrap align-items-center justify-content-center row-gap-5">
+
+					<div className="col-md-6 text-center">
+						<ScrollLink to="contact" smooth={true} duration={300} offset={-50}>
+							<img
+								src={avatarImage}
+								alt="My Avatar"
+								className="img-fluid about-avatar"
+								style={{ cursor: "pointer" }}
+							/>
+						</ScrollLink>
+					</div>
+					<div className="col-md-6 text-light text-start">
+						<h2>About Me</h2>
+						<p>
+							I'm a passionate full-stack developer with a background in Information Technology.
+							After completing the 4Geeks Full Stack Bootcamp, I've been building modern, responsive
+							applications with a focus on clean UI and performance.
+						</p>
+						<p>
+							I love React, Flask, and working on creative interfaces. Let’s build something great!
+						</p>
+					</div>
+				</div>
 			</section>
 
 			{/* PROJECTS SECTION */}

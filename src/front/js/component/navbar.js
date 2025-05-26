@@ -20,7 +20,7 @@ export const Navbar = () => {
 					<ScrollLink
 						to="home"
 						smooth={true}
-						duration={500}
+						duration={200}
 						className="navbar-brand"
 						style={{ cursor: "pointer" }}
 					>
@@ -32,7 +32,8 @@ export const Navbar = () => {
 					<ScrollLink
 						to="about"
 						smooth={true}
-						duration={500}
+						duration={200}
+						offset={-200}
 						className="nav-link"
 						onClick={() => console.log("Scrolling to about...")}
 					>
@@ -41,7 +42,7 @@ export const Navbar = () => {
 					<ScrollLink
 						to="projects"
 						smooth={true}
-						duration={500}
+						duration={200}
 						// offset={-80}
 						className="nav-link"
 					>
@@ -50,7 +51,7 @@ export const Navbar = () => {
 					<ScrollLink
 						to="contact"
 						smooth={true}
-						duration={500}
+						duration={200}
 						offset={-80}
 						className="nav-link"
 					>
