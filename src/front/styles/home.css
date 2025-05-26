@@ -27,11 +27,15 @@ body {
   text-align: center;
 }
 #home {
-  padding-bottom: 6rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 80vh; /* Ensure space for blobs */
 }
 
+
 #about {
-  padding-top: 10rem;
+  padding-top: 0rem;
   margin-top: 10rem;
 }
 
@@ -109,6 +113,29 @@ body {
   flex-shrink: 0;
 }
 
+.about-section {
+  padding: 6rem 2rem;
+  background-color: transparent;
+}
+
+.about-avatar {
+  width: 300px; /* or 250px, adjust as needed */
+  height: auto;
+  max-width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.about-avatar:hover {
+  transform: scale(1.05);
+}
+
+.about-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
 	.welcome-content {
@@ -124,4 +151,200 @@ body {
 	.welcome-image {
 		margin-top: 2rem;
 	}
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Content should be above the canvas */
+.content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  padding-top: 5rem; /* Add spacing as needed */
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem; /* Increase this value for more space */
+  flex-wrap: nowrap;
+  margin: 2rem 0 6rem 0; /* Optional: Adds space above and below the row */
+}
+.below-cards {
+  margin-top: 7rem; /* or adjust as needed */
+  text-align: center;
+}
+#home {
+  padding-bottom: 0rem;
+}
+
+#about {
+  padding-top: 0rem;
+  margin-top: 10rem;
+}
+
+#projects {
+  padding-top: 10rem;
+  margin-top: 10rem;
+}
+
+#contact {
+  padding-top: 10rem;
+  margin-top: 10rem;
+  padding-bottom: 8rem;
+  margin-bottom: 8rem;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave-animation 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(  0.0deg) }
+ 10% { transform: rotate(-10.0deg) }
+ 20% { transform: rotate( 12.0deg) }
+ 30% { transform: rotate(-10.0deg) }
+ 40% { transform: rotate(  9.0deg) }
+ 50% { transform: rotate(  0.0deg) }
+100% { transform: rotate(  0.0deg) }
+}
+.welcome-section {
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.welcome-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.welcome-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.welcome-text h2 {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #d0aaff;
+}
+
+.welcome-text p {
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+
+.welcome-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.about-section {
+  padding: 6rem 2rem;
+  background-color: transparent;
+}
+
+.about-avatar {
+  width: 300px; /* or 250px, adjust as needed */
+  height: auto;
+  max-width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.about-avatar:hover {
+  transform: scale(1.05);
+}
+
+.about-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.welcome-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.welcome-text {
+		padding: 0;
+		text-align: center;
+	}
+
+	.welcome-image {
+		margin-top: 2rem;
+	}
+}
+
+.home-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  top: 5%;
+  left: 5%;
+  background: radial-gradient(circle at center, #bf40bf 0%, #1a002b 80%);
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  right: 10%;
+  background: radial-gradient(circle at center, #9333ea 0%, #1a002b 80%);
+}
+
+.blob3 {
+  width: 350px;
+  height: 350px;
+  top: 40%;
+  left: 30%;
+  background: radial-gradient(circle at center, #a855f7 0%, #1a002b 80%);
+}
+
+@keyframes blobPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.25;
+  }
 }
