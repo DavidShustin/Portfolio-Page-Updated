@@ -5,6 +5,7 @@ import TiltedCard from "../component/tiltedCard";
 import "../../styles/home.css";
 import avatarImage from "../../img/avatar.png";
 import BlobBackground from "../component/blobBackground";
+import SkillSet from "../component/SkillSet"
 
 
 export const Home = () => {
@@ -86,6 +87,7 @@ export const Home = () => {
 						containerWidth="300px"
 					/>
 				</div>
+				<SkillSet />
 			</section>
 
 			{/* CONTACT SECTION */}
