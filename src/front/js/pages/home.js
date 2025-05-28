@@ -5,6 +5,7 @@ import TiltedCard from "../component/tiltedCard";
 import "../../styles/home.css";
 import avatarImage from "../../img/avatar.png";
 import BlobBackground from "../component/blobBackground";
+import SkillSet from "../component/SkillSet"
 
 
 export const Home = () => {
@@ -86,6 +87,7 @@ export const Home = () => {
 						containerWidth="300px"
 					/>
 				</div>
+				<SkillSet />
 			</section>
 
 			{/* CONTACT SECTION */}
@@ -97,7 +99,7 @@ export const Home = () => {
 			{/* OPTIONAL FOOTER / EXTRAS */}
 			<div className="below-cards">
 				<div className="alert alert-info">
-					{store.message || "make sure to ask about the navbar and sidebars in the meeting on thursday."}
+					{store.message || "Make sure to ask about the blob background in the home section, what i can do for the contact section of the page, and where i can find the icons for the skillsets i put into the page on thursday."}
 				</div>
 				<p>
 					This will be the link to the ReactBits Website{" "}

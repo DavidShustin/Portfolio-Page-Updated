@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 6rem; /* Increase this value for more space */
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 2rem 0 6rem 0; /* Optional: Adds space above and below the row */
 }
 .below-cards {
@@ -40,15 +40,102 @@ body {
 }
 
 #projects {
-  padding-top: 10rem;
-  margin-top: 10rem;
+  padding-top: 6rem;   /* Adjust the top padding to your preference */
+  margin-top: 0rem;    /* Remove any margin-top to reduce the space */
+  margin-bottom: 2rem;  /* Reduced margin to bring the contact section closer */
 }
 
+/* Skillset Section (Container) */
+.skillset-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: transparent;  /* Make sure the section background is transparent */
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: none;  /* Remove shadow to ensure complete transparency */
+  backdrop-filter: none;  /* Remove blur effect, if it was causing an issue */
+  color: white;  /* Ensure text is visible on top of the background */
+  z-index: 1;  /* Ensure it's above other sections */
+  position: relative;
+  margin-top: 5rem;  /* Add space from Projects */
+}
+
+/* Centering the skillset-container under the Projects section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Center the items horizontally */
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-items: center;  /* Ensures skill boxes are centered */
+}
+
+/* Skill Box Styling */
+.skill-box {
+  background: transparent;  /* Fully transparent background for each skill box */
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;  /* Ensures the cursor stays normal */
+  border: 3px solid #bf40bf;  /* Bright purple border around the skill box */
+  width: 150px;  /* Set a fixed width to make boxes equal size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  /* Center the icon and text inside each box */
+}
+
+.skill-box:hover {
+  transform: scale(1.05);  /* Hover effect to enlarge the box slightly */
+}
+
+/* Icon Styling */
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Skill Name Styling */
+.skill-box p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Headings for Skill Categories */
+.skill-category {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #bf40bf; /* Purple color for the category headings */
+  font-weight: bold;
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .skillset-section {
+    padding: 2rem 1rem;
+    top: 20%;  /* Adjust vertical centering for smaller screens */
+    left: 50%;
+    transform: translate(-50%, -20%);
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+
+
 #contact {
-  padding-top: 10rem;
-  margin-top: 10rem;
-  padding-bottom: 8rem;
-  margin-bottom: 8rem;
+  padding-top: 2rem;   /* Reduce top padding to bring the contact section closer */
+  margin-top: -2rem;   /* Use a negative margin to pull the Contact section upwards */
+  padding-bottom: 4rem;  /* Optional: adjust bottom padding */
+  margin-bottom: 4rem;  /* Optional: reduce the bottom margin */
 }
 
 .wave {

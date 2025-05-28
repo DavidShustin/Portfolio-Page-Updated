@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 //import bootstrap into the bundle, dont forget to do npm install bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 //include your index.scss file into the bundle
