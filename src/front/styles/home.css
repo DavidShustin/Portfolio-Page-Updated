@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
@@ -6,153 +7,165 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Content should be above the canvas */
+/* Content positioning */
 .content {
   position: relative;
   z-index: 10;
   color: white;
   text-align: center;
-  padding-top: 5rem; /* Add spacing as needed */
+  padding-top: 5rem;
 }
+
+/* Card Section */
 .card-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 6rem; /* Increase this value for more space */
+  gap: 6rem;
   flex-wrap: wrap;
-  margin: 2rem 0 6rem 0; /* Optional: Adds space above and below the row */
+  margin: 2rem 0 6rem;
 }
+
+/* Spacing below the cards */
 .below-cards {
-  margin-top: 7rem; /* or adjust as needed */
+  margin-top: 7rem;
   text-align: center;
 }
+
+/* Home Section */
 #home {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  min-height: 80vh; /* Ensure space for blobs */
+  min-height: 80vh;
 }
 
-
+/* About Section */
 #about {
   padding-top: 0rem;
-  margin-top: 10rem;
+  margin-top: 2rem;
+  animation: none !important;   /* Make sure no animations are applied */
+  transition: none !important;  /* Make sure no transitions are applied */
 }
 
+/* Projects Section */
 #projects {
-  padding-top: 6rem;   /* Adjust the top padding to your preference */
-  margin-top: 0rem;    /* Remove any margin-top to reduce the space */
-  margin-bottom: 2rem;  /* Reduced margin to bring the contact section closer */
+  padding-top: 6rem;
+  margin-top: 2rem;    /* Reduced margin */
+  margin-bottom: 2rem;  /* Reduced margin */
 }
 
-/* Skillset Section (Container) */
+/* Skillset Section */
 .skillset-section {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: transparent;  /* Make sure the section background is transparent */
+  background-color: transparent;
   border-radius: 12px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  box-shadow: none;  /* Remove shadow to ensure complete transparency */
-  backdrop-filter: none;  /* Remove blur effect, if it was causing an issue */
-  color: white;  /* Ensure text is visible on top of the background */
-  z-index: 1;  /* Ensure it's above other sections */
+  box-shadow: none;
+  backdrop-filter: none;
+  color: white;
+  z-index: 1;
   position: relative;
-  margin-top: 5rem;  /* Add space from Projects */
+  margin-top: 2rem;  /* Reduced margin to bring the Skillset section closer */
 }
 
-/* Centering the skillset-container under the Projects section */
+/* Skillset Container */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Center the items horizontally */
+  justify-content: center;
   gap: 2rem;
   margin-top: 3rem;
-  justify-items: center;  /* Ensures skill boxes are centered */
+}
+
+/* Skill Icon Styling (For Image-based Icons) */
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1); /* This makes the image white */
+}
+.flask-icon,
+.express-icon,
+.sqlalchemy-icon,
+.jest-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(100%);  /* Makes the icons white */
 }
 
 /* Skill Box Styling */
+/* Skill Box Styling */
 .skill-box {
-  background: transparent;  /* Fully transparent background for each skill box */
+  background: transparent;
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;
-  cursor: default;  /* Ensures the cursor stays normal */
-  border: 3px solid #bf40bf;  /* Bright purple border around the skill box */
-  width: 150px;  /* Set a fixed width to make boxes equal size */
+  cursor: default;
+  border: 3px solid #bf40bf;
+  width: 150px;  /* Set width */
+  height: 150px; /* Set height to make it square */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack icon on top of title */
   justify-content: center;
-  align-items: center;  /* Center the icon and text inside each box */
-}
-
-.skill-box:hover {
-  transform: scale(1.05);  /* Hover effect to enlarge the box slightly */
+  align-items: center;
+  gap: 0.5rem; /* Space between the icon and the title */
 }
 
 /* Icon Styling */
 .icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;  /* You can adjust the font-size to better fit the icon */
 }
 
 /* Skill Name Styling */
 .skill-box p {
   font-size: 1rem;
   font-weight: 500;
-  margin-top: 0.5rem;
+  margin: 0;  /* Remove margin to make the title closer to the icon */
 }
 
-/* Headings for Skill Categories */
+/* Optional: Adjust icon size */
+.skill-box .icon {
+  font-size: 2.5rem;  /* You can adjust the font-size to better fit the icon */
+  margin-bottom: 0.5rem;  /* Space between the icon and the title */
+}
+
+/* Skill Name Styling */
+
+
+
+.skill-box:hover {
+  transform: scale(1.05);  /* Hover effect */
+}
+
+/* Skill Name */
+
+
+/* Skill Category Heading */
 .skill-category {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #bf40bf; /* Purple color for the category headings */
+  color: #bf40bf;
   font-weight: bold;
 }
 
-/* Mobile Responsive Layout */
-@media (max-width: 768px) {
-  .skillset-section {
-    padding: 2rem 1rem;
-    top: 20%;  /* Adjust vertical centering for smaller screens */
-    left: 50%;
-    transform: translate(-50%, -20%);
-  }
-
-  .skills-container {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
-
-
-
+/* Contact Section */
 #contact {
-  padding-top: 2rem;   /* Reduce top padding to bring the contact section closer */
-  margin-top: -2rem;   /* Use a negative margin to pull the Contact section upwards */
-  padding-bottom: 4rem;  /* Optional: adjust bottom padding */
-  margin-bottom: 4rem;  /* Optional: reduce the bottom margin */
+  padding-top: 2rem;
+  margin-top: -2rem;    /* Reduced margin to bring the Contact section upwards */
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
-.wave {
-  display: inline-block;
-  animation: wave-animation 2s infinite;
-  transform-origin: 70% 70%;
-}
-
-@keyframes wave-animation {
-  0% { transform: rotate(  0.0deg) }
- 10% { transform: rotate(-10.0deg) }
- 20% { transform: rotate( 12.0deg) }
- 30% { transform: rotate(-10.0deg) }
- 40% { transform: rotate(  9.0deg) }
- 50% { transform: rotate(  0.0deg) }
-100% { transform: rotate(  0.0deg) }
-}
+/* Welcome Section */
 .welcome-section {
   padding: 6rem 2rem;
   display: flex;
@@ -161,6 +174,7 @@ body {
   min-height: 80vh;
 }
 
+/* Welcome Content */
 .welcome-content {
   display: flex;
   justify-content: space-between;
@@ -170,27 +184,29 @@ body {
   flex-wrap: wrap;
 }
 
+/* Welcome Text */
 .welcome-text {
   flex: 1;
   min-width: 300px;
 }
 
 .welcome-text h2 {
-	font-size: 3rem;
-	font-weight: bold;
-	color: #d0aaff;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #d0aaff;
 }
 
 .welcome-text p {
-	font-size: 1.2rem;
-	margin-top: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
+/* Welcome Image */
 .welcome-image {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-img {
@@ -200,13 +216,14 @@ body {
   flex-shrink: 0;
 }
 
+/* About Section */
 .about-section {
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background-color: transparent;
 }
 
 .about-avatar {
-  width: 300px; /* or 250px, adjust as needed */
+  width: 300px;
   height: auto;
   max-width: 100%;
   transition: transform 0.4s ease;
@@ -223,215 +240,344 @@ body {
   height: 100%;
 }
 
-/* Mobile responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-	.welcome-content {
-		flex-direction: column;
-		text-align: center;
-	}
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-	.welcome-text {
-		padding: 0;
-		text-align: center;
-	}
+  .welcome-text {
+    padding: 0;
+    text-align: center;
+  }
 
-	.welcome-image {
-		margin-top: 2rem;
-	}
+  .welcome-image {
+    margin-top: 2rem;
+  }
 }
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #121212;
+
+.contact-section {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 2rem;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #d0aaff;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  margin-bottom: 2rem;
 }
 
-/* Content should be above the canvas */
-.content {
+/* Contact Button Container */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between buttons */
+}
+
+/* Contact Button Styling */
+.contact-button {
+  background-color: transparent;
+  color: white;
+  padding: 0.8rem 1.5rem;  /* Reduced padding to make the button smaller */
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #bf40bf;  /* Purple border */
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;  /* Reduced font size */
+}
+
+.contact-button:hover {
+  transform: scale(1.05);  /* Hover effect */
+}
+
+.contact-icon {
+  font-size: 1.5rem;  /* Smaller icon size */
+  margin-right: 8px;  /* Space between icon and text */
+}
+
+.contact-button p {
+  font-size: 0.9rem;  /* Adjust font size for text */
+  font-weight: normal;
+  color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+    gap: 1rem; /* Stack buttons vertically on smaller screens */
+  }
+}
+
+
+/* About Section */
+section#about.about-section {
+  padding: 2rem 2rem;
+  background-color: transparent;
+  max-width: 1100px; /* Make it narrower */
+  margin: 0 auto;
+  background: rgba(90, 28, 90, 0.2); /* Translucent light purple background */
+  border-radius: 12px;
+  border: 3px solid rgba(191, 64, 191, 0.4); /* Border color for the cloud effect */
+  backdrop-filter: blur(10px); /* Optional: blur the background for a cloud-like effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  max-height: 500px;  /* Limit the maximum height to make it shorter */
+  overflow: hidden;
+  position: relative; /* Ensure no fading effects on scrolling */
+  animation: none !important;   /* Ensure there is no animation applied */
+  transition: none !important;  /* Ensure no transition applied */
+}
+
+/* Create a space cloud effect using pseudo-elements */
+section#about.about-section::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: radial-gradient(circle, rgba(94, 27, 94, 0.3), rgba(64, 64, 191, 0.2)); /* More subtle nebula-like glowing border */
+  z-index: -1; /* Place it behind the actual content */
+  filter: blur(15px); /* Add blur effect to give it a cloud feel */
+  animation: none !important; /* Remove animation from the pseudo-element */
+  transition: none !important; /* Remove transition from the pseudo-element */
+}
+
+/* Remove any transition effect from the content within the about section */
+section#about.about-section .about-text,
+section#about.about-section .about-avatar {
+  transition: none !important;  /* Remove transition effects */
+  animation: none !important;   /* Ensure no animation applied */
+}
+
+/* Animation for space cloud movement */
+@keyframes space-cloud {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* About Section Content */
+.about-text {
+  color: white;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+/* About Avatar */
+.about-avatar {
+  width: 250px; /* Adjusted avatar size */
+  height: auto;
+  max-width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.about-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile adjustments for stacking */
+@media (max-width: 768px) {
+  section#about.about-section {
+    max-width: 90%; /* Make the section a bit smaller on mobile */
+  }
+
+  .about-section .container {
+    flex-direction: column; /* Stack text and avatar vertically */
+    text-align: center;
+  }
+}
+
+.wave {
+  display: inline-block;
+  animation: wave-animation 1.5s infinite; /* Makes the hand wave infinitely */
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(  0.0deg); }
+  20% { transform: rotate(-25.0deg); } /* Increased rotation */
+  40% { transform: rotate( 20.0deg); } /* Increased rotation */
+  60% { transform: rotate(-15.0deg); } /* Increased rotation */
+  80% { transform: rotate( 10.0deg); }
+  100% { transform: rotate(  0.0deg); }
+}
+
+/* About Section Avatar Container */
+.about-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;  /* Enable pointer events on this container */
+}
+
+/* Avatar Styling */
+.about-avatar {
+  width: 300px; /* Width of the avatar */
+  height: auto; /* Set fixed height to match the width */
+  max-width: 100%;
+  transition: transform 0.4s ease;
+  cursor: pointer;
   position: relative;
   z-index: 10;
-  color: white;
-  text-align: center;
-  padding-top: 5rem; /* Add spacing as needed */
-}
-.card-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 6rem; /* Increase this value for more space */
-  flex-wrap: nowrap;
-  margin: 2rem 0 6rem 0; /* Optional: Adds space above and below the row */
-}
-.below-cards {
-  margin-top: 7rem; /* or adjust as needed */
-  text-align: center;
-}
-#home {
-  padding-bottom: 0rem;
+  pointer-events: auto;  /* Ensure the avatar itself can be clicked */
 }
 
-#about {
-  padding-top: 0rem;
-  margin-top: 10rem;
+/* Limit hover/click area to the avatar */
+.about-avatar-container:hover .about-avatar {
+  transform: scale(1.05); /* Hover effect to enlarge */
 }
 
-#projects {
-  padding-top: 10rem;
-  margin-top: 10rem;
-}
-
-#contact {
-  padding-top: 10rem;
-  margin-top: 10rem;
-  padding-bottom: 8rem;
-  margin-bottom: 8rem;
-}
-
-.wave {
-  display: inline-block;
-  animation: wave-animation 2s infinite;
-  transform-origin: 70% 70%;
-}
-
-@keyframes wave-animation {
-  0% { transform: rotate(  0.0deg) }
- 10% { transform: rotate(-10.0deg) }
- 20% { transform: rotate( 12.0deg) }
- 30% { transform: rotate(-10.0deg) }
- 40% { transform: rotate(  9.0deg) }
- 50% { transform: rotate(  0.0deg) }
-100% { transform: rotate(  0.0deg) }
-}
-.welcome-section {
-  padding: 6rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-}
-
-.welcome-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.welcome-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.welcome-text h2 {
-	font-size: 3rem;
-	font-weight: bold;
-	color: #d0aaff;
-}
-
-.welcome-text p {
-	font-size: 1.2rem;
-	margin-top: 1rem;
-}
-
-.welcome-image {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.hero-img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-}
-
-.about-section {
-  padding: 6rem 2rem;
-  background-color: transparent;
-}
-
-.about-avatar {
-  width: 300px; /* or 250px, adjust as needed */
-  height: auto;
-  max-width: 100%;
-  transition: transform 0.4s ease;
-}
-
-.about-avatar:hover {
-  transform: scale(1.05);
-}
-
-.about-avatar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-	.welcome-content {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.welcome-text {
-		padding: 0;
-		text-align: center;
-	}
-
-	.welcome-image {
-		margin-top: 2rem;
-	}
-}
-
-.home-blobs {
+/* Make sure only the avatar itself is clickable */
+.about-avatar-container::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Prevent clicks outside the avatar */
+}
+
+/* Optional: If you need to make the avatar more interactive on hover */
+.about-avatar-container:hover .about-avatar {
+  transform: scale(1.05); /* Hover effect to enlarge */
+}
+
+/* Contact Form Container Styling */
+.contact-form-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly dark background for the form */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px; /* Make the container narrower */
+  margin: 2rem auto; /* Centered horizontally and space around */
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add slight shadow for better visual separation */
+}
+
+.contact-form-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #d0aaff; /* Light purple heading */
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
   width: 100%;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+  padding: 0.8rem;
+  border: 2px solid #bf40bf; /* Purple border */
+  border-radius: 8px;
+  color: white;
+  background-color: #121212;
+  font-size: 1rem;
 }
 
-.blob1 {
-  width: 400px;
-  height: 400px;
-  top: 5%;
-  left: 5%;
-  background: radial-gradient(circle at center, #bf40bf 0%, #1a002b 80%);
+.contact-form-container textarea {
+  height: 120px; /* Set a fixed height for the textarea */
+  resize: none;  /* Prevent textarea resizing */
 }
 
-.blob2 {
-  width: 300px;
-  height: 300px;
-  top: 10%;
-  right: 10%;
-  background: radial-gradient(circle at center, #9333ea 0%, #1a002b 80%);
+.contact-form-container button {
+  padding: 1rem 2rem;
+  background-color: #bf40bf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
-.blob3 {
-  width: 350px;
-  height: 350px;
-  top: 40%;
-  left: 30%;
-  background: radial-gradient(circle at center, #a855f7 0%, #1a002b 80%);
+.contact-form-container button:hover {
+  background-color: #9333ea; /* Change the color when hovering */
 }
 
-@keyframes blobPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.15;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.25;
-  }
+/* Error and Success Messages */
+.error-message,
+.success-message {
+  font-size: 1rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #ff6b6b; /* Red for error */
+}
+
+.success-message {
+  color: #6c6; /* Green for success */
+}
+
+/* Contact Button Container Styling */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between buttons */
+  margin-top: 2rem; /* Add some space above the buttons */
+}
+
+/* Contact Button Styling */
+.contact-button {
+  background-color: transparent;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #bf40bf;  /* Purple border */
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;  /* Reduced font size */
+}
+
+.contact-button:hover {
+  transform: scale(1.05);  /* Hover effect */
+}
+
+.contact-icon {
+  font-size: 1.5rem;  /* Smaller icon size */
+  margin-right: 8px;  /* Space between icon and text */
+}
+
+.contact-button p {
+  font-size: 0.9rem;  /* Adjust font size for text */
+  font-weight: normal;
+  color: white;
 }
