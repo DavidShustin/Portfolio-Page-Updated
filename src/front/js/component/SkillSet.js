@@ -1,21 +1,24 @@
 import React from 'react';
-import '../../styles/home.css'; // Ensure the CSS for styling is imported
-
-// Icons for each skill
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPython, FaNodeJs, FaGitAlt, FaDatabase } from 'react-icons/fa';
 
+import jestIcon from '../../icons/jest.png';
+import expressIcon from '../../icons/express.png';
+import sqlalchemyIcon from '../../icons/sqlalchemy.png';
+import flaskIcon from '../../icons/flask.png';
+
 const skills = [
-  { name: 'HTML/CSS', icon: <FaHtml5 /> },
+  { name: 'HTML5', icon: <FaHtml5 /> },
+  { name: 'CSS3', icon: <FaCss3Alt /> },
   { name: 'JavaScript', icon: <FaJsSquare /> },
   { name: 'React', icon: <FaReact /> },
   { name: 'Python', icon: <FaPython /> },
-  { name: 'Flask', icon: <FaPython /> },  // No Flask-specific icon, using Python
   { name: 'SQL', icon: <FaDatabase /> },
-  { name: 'SQL-Alchemy', icon: <FaDatabase /> },  // No SQLAlchemy-specific icon, using Database
   { name: 'Node.js', icon: <FaNodeJs /> },
-  { name: 'Express', icon: <FaNodeJs /> },  // No Express-specific icon, using Node.js
   { name: 'Git', icon: <FaGitAlt /> },
-  { name: 'Jest (For Testing)', icon: <FaGitAlt /> }, // Replaced with Git icon as a placeholder
+  { name: 'Flask', icon: <img src={flaskIcon} alt="Flask" className="flask-icon" /> },
+  { name: 'Express', icon: <img src={expressIcon} alt="Express" className="express-icon" /> },
+  { name: 'SQLAlchemy', icon: <img src={sqlalchemyIcon} alt="SQLAlchemy" className="sqlalchemy-icon" /> },
+  { name: 'Jest', icon: <img src={jestIcon} alt="Jest" className="jest-icon" /> },
 ];
 
 const SkillSet = () => (

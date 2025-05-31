@@ -12,6 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'font-awesome/css/font-awesome.min.css';
 
 
+
 //include your index.scss file into the bundle
 import "../styles/index.css";
 
