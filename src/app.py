@@ -10,7 +10,8 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
-from src.api.send_email import send_email
+from api.send_email import send_email
+from flask_cors import CORS
 
 # from models import Person
 
@@ -40,6 +41,8 @@ setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
+
+CORS(app, resources={r"/api/*": {"origins": "https://musical-zebra-x5r76v55pxv4fwgr-3000.app.github.dev"}}, supports_credentials=True)
 
 print("\n\nRegistered Routes:")
 for rule in app.url_map.iter_rules():
