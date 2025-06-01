@@ -20,33 +20,33 @@ export const Home = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!email || !comment) {
-      setError('Both email and comment are required!');
-      return;
-    }
-
     try {
-      // Make sure to include the /api prefix in the URL
-      const response = await fetch('/api/contactUs', {
-        method: 'POST',
+      const response = await fetch("https://musical-zebra-x5r76v55pxv4fwgr-3001.app.github.dev/api/contactUs", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, comment }),
+        body: JSON.stringify({
+          email,
+          comment,
+        }),
       });
 
       const data = await response.json();
-
       if (response.ok) {
-        setMessage('Thank you for your comment!');
-        setEmail('');
-        setComment('');
+        setMessage(data.message);
+        setError("");
+        setEmail("");
+        
+        setComment("");
       } else {
-        setError(data.message || 'Something went wrong!');
+        setError(data.message || "Something went wrong");
+        setMessage("");
       }
-    } catch (error) {
-      setError('Failed to send message.');
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Try again later.");
+      setMessage("");
     }
   };
 

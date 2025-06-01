@@ -10,8 +10,8 @@ from api.send_email import send_email
 
 api = Blueprint('api', __name__)
 
-# Allow CORS requests to this API
-CORS(api)
+# CORS are in app.py
+
 
 # Define your routes here
 
@@ -24,11 +24,11 @@ def contactUs():
     if not email:
         return jsonify({"message": "Email is required"}), 400    
     if not comment:
-        return jsonify({"message": "Please give us your comment."}), 400 
-    
-    email_value = email + "\n\n" + comment
-    send_email("miami612023@gmail.com", email_value, "Comment from the user")
-    return jsonify({"message": "Thank you for your comment."}), 200
+        return jsonify({"message": "Please enter a comment."}), 400 
+
+    subject = "Email from Portfolio Page User"
+    send_email("dshustin@gmail.com", comment, subject, sender_email=email)
+    return jsonify({"message": "Thank you for your message!"}), 200
 
 
 
