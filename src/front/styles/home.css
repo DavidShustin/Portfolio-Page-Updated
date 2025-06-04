@@ -1,38 +1,47 @@
-/* General Styles */
+/* === General Styles === */
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif !important;
   background-color: #121212;
   color: #ffffff;
-  font-family: Arial, sans-serif;
 }
 
-/* Content positioning */
+/* === Reusable Section Container === */
+.section,
+.about-section,
+.contact-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #d0aaff;
+  border-radius: 10px;
+}
+
+/* === Content Positioning === */
 .content {
   position: relative;
   z-index: 10;
-  color: white;
   text-align: center;
   padding-top: 5rem;
 }
 
-/* Card Section */
-.card-wrapper {
+/* === Intro Text Side-by-Side === */
+.horizontal-intro {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  gap: 6rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin: 2rem 0 6rem;
-}
-
-/* Spacing below the cards */
-.below-cards {
-  margin-top: 7rem;
   text-align: center;
 }
+.horizontal-intro h1,
+.horizontal-intro h2 {
+  margin: 0;
+  white-space: nowrap;
+}
 
-/* Home Section */
+/* === Home Section === */
 #home {
   position: relative;
   z-index: 1;
@@ -40,132 +49,7 @@ body {
   min-height: 80vh;
 }
 
-/* About Section */
-#about {
-  padding-top: 0rem;
-  margin-top: 2rem;
-  animation: none !important;   /* Make sure no animations are applied */
-  transition: none !important;  /* Make sure no transitions are applied */
-}
-
-/* Projects Section */
-#projects {
-  padding-top: 6rem;
-  margin-top: 2rem;    /* Reduced margin */
-  margin-bottom: 2rem;  /* Reduced margin */
-}
-
-/* Skillset Section */
-.skillset-section {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: transparent;
-  border-radius: 12px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-shadow: none;
-  backdrop-filter: none;
-  color: white;
-  z-index: 1;
-  position: relative;
-  margin-top: 2rem;  /* Reduced margin to bring the Skillset section closer */
-}
-
-/* Skillset Container */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-/* Skill Icon Styling (For Image-based Icons) */
-.skill-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  filter: brightness(0) invert(1); /* This makes the image white */
-}
-.flask-icon,
-.express-icon,
-.sqlalchemy-icon,
-.jest-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(100%);  /* Makes the icons white */
-}
-
-/* Skill Box Styling */
-/* Skill Box Styling */
-.skill-box {
-  background: transparent;
-  color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  cursor: default;
-  border: 3px solid #bf40bf;
-  width: 150px;  /* Set width */
-  height: 150px; /* Set height to make it square */
-  display: flex;
-  flex-direction: column; /* Stack icon on top of title */
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem; /* Space between the icon and the title */
-}
-
-/* Icon Styling */
-.icon {
-  font-size: 2.5rem;  /* You can adjust the font-size to better fit the icon */
-}
-
-/* Skill Name Styling */
-.skill-box p {
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;  /* Remove margin to make the title closer to the icon */
-}
-
-/* Optional: Adjust icon size */
-.skill-box .icon {
-  font-size: 2.5rem;  /* You can adjust the font-size to better fit the icon */
-  margin-bottom: 0.5rem;  /* Space between the icon and the title */
-}
-
-/* Skill Name Styling */
-
-
-
-.skill-box:hover {
-  transform: scale(1.05);  /* Hover effect */
-}
-
-/* Skill Name */
-
-
-/* Skill Category Heading */
-.skill-category {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #bf40bf;
-  font-weight: bold;
-}
-
-/* Contact Section */
-#contact {
-  padding-top: 2rem;
-  margin-top: -2rem;    /* Reduced margin to bring the Contact section upwards */
-  padding-bottom: 4rem;
-  margin-bottom: 4rem;
-}
-
-/* Welcome Section */
+/* === Welcome Section === */
 .welcome-section {
   padding: 6rem 2rem;
   display: flex;
@@ -173,8 +57,6 @@ body {
   align-items: center;
   min-height: 80vh;
 }
-
-/* Welcome Content */
 .welcome-content {
   display: flex;
   justify-content: space-between;
@@ -184,400 +66,392 @@ body {
   flex-wrap: wrap;
 }
 
-/* Welcome Text */
-.welcome-text {
-  flex: 1;
-  min-width: 300px;
-}
-
 .welcome-text h2 {
   font-size: 3rem;
   font-weight: bold;
-  color: #d0aaff;
+  color: #d0aaff !important;
 }
-
 .welcome-text p {
   font-size: 1.2rem;
   margin-top: 1rem;
 }
-
-/* Welcome Image */
 .welcome-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .hero-img {
   max-width: 400px;
   width: 100%;
   height: auto;
-  flex-shrink: 0;
 }
 
-/* About Section */
-.about-section {
-  padding: 2rem 2rem;
-  background-color: transparent;
+.welcome-text {
+  flex: 1;
+  min-width: 300px;
 }
-
-.about-avatar {
-  width: 300px;
-  height: auto;
-  max-width: 100%;
-  transition: transform 0.4s ease;
-}
-
-.about-avatar:hover {
-  transform: scale(1.05);
-}
-
-.about-avatar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .welcome-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .welcome-text {
-    padding: 0;
-    text-align: center;
-  }
-
-  .welcome-image {
-    margin-top: 2rem;
-  }
-}
-
-.contact-section {
-  text-align: center;
-  margin-top: 5rem;
+/* === About Section === */
+#about.about-section {
   padding: 2rem;
-}
-
-.contact-section h2 {
-  font-size: 2rem;
-  color: #d0aaff;
-  margin-bottom: 1rem;
-}
-
-.contact-section p {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 2rem;
-}
-
-/* Contact Button Container */
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem; /* Space between buttons */
-}
-
-/* Contact Button Styling */
-.contact-button {
-  background-color: transparent;
-  color: white;
-  padding: 0.8rem 1.5rem;  /* Reduced padding to make the button smaller */
-  border-radius: 8px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #bf40bf;  /* Purple border */
-  font-weight: bold;
-  transition: transform 0.3s ease;
-  font-size: 0.9rem;  /* Reduced font size */
-}
-
-.contact-button:hover {
-  transform: scale(1.05);  /* Hover effect */
-}
-
-.contact-icon {
-  font-size: 1.5rem;  /* Smaller icon size */
-  margin-right: 8px;  /* Space between icon and text */
-}
-
-.contact-button p {
-  font-size: 0.9rem;  /* Adjust font size for text */
-  font-weight: normal;
-  color: white;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .contact-buttons {
-    flex-direction: column;
-    gap: 1rem; /* Stack buttons vertically on smaller screens */
-  }
-}
-
-
-/* About Section */
-section#about.about-section {
-  padding: 2rem 2rem;
-  background-color: transparent;
-  max-width: 1100px; /* Make it narrower */
-  margin: 0 auto;
-  background: rgba(90, 28, 90, 0.2); /* Translucent light purple background */
+  background: rgba(90, 28, 90, 0.2);
   border-radius: 12px;
-  border: 3px solid rgba(191, 64, 191, 0.4); /* Border color for the cloud effect */
-  backdrop-filter: blur(10px); /* Optional: blur the background for a cloud-like effect */
+  border: 3px solid rgba(191, 64, 191, 0.4);
+  backdrop-filter: blur(10px);
+  max-width: 1050px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  height: auto;
-  max-height: 500px;  /* Limit the maximum height to make it shorter */
+  align-items: center;
   overflow: hidden;
-  position: relative; /* Ensure no fading effects on scrolling */
-  animation: none !important;   /* Ensure there is no animation applied */
-  transition: none !important;  /* Ensure no transition applied */
+  position: relative;
 }
-
-/* Create a space cloud effect using pseudo-elements */
-section#about.about-section::before {
+#about.about-section::before {
   content: "";
   position: absolute;
   top: -15px;
   left: -15px;
   right: -15px;
   bottom: -15px;
-  background: radial-gradient(circle, rgba(94, 27, 94, 0.3), rgba(64, 64, 191, 0.2)); /* More subtle nebula-like glowing border */
-  z-index: -1; /* Place it behind the actual content */
-  filter: blur(15px); /* Add blur effect to give it a cloud feel */
-  animation: none !important; /* Remove animation from the pseudo-element */
-  transition: none !important; /* Remove transition from the pseudo-element */
+  background: radial-gradient(circle, rgba(94, 27, 94, 0.3), rgba(64, 64, 191, 0.2));
+  z-index: -1;
+  filter: blur(15px);
 }
-
-/* Remove any transition effect from the content within the about section */
-section#about.about-section .about-text,
-section#about.about-section .about-avatar {
-  transition: none !important;  /* Remove transition effects */
-  animation: none !important;   /* Ensure no animation applied */
-}
-
-/* Animation for space cloud movement */
-@keyframes space-cloud {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
-
-/* About Section Content */
 .about-text {
   color: white;
   text-align: left;
   font-size: 1.2rem;
 }
-
-/* About Avatar */
-.about-avatar {
-  width: 250px; /* Adjusted avatar size */
-  height: auto;
-  max-width: 100%;
-  transition: transform 0.4s ease;
-}
-
-.about-avatar:hover {
-  transform: scale(1.05);
-}
-
-/* Mobile adjustments for stacking */
-@media (max-width: 768px) {
-  section#about.about-section {
-    max-width: 90%; /* Make the section a bit smaller on mobile */
-  }
-
-  .about-section .container {
-    flex-direction: column; /* Stack text and avatar vertically */
-    text-align: center;
-  }
-}
-
-.wave {
-  display: inline-block;
-  animation: wave-animation 1.5s infinite; /* Makes the hand wave infinitely */
-  transform-origin: 70% 70%;
-}
-
-@keyframes wave-animation {
-  0% { transform: rotate(  0.0deg); }
-  20% { transform: rotate(-25.0deg); } /* Increased rotation */
-  40% { transform: rotate( 20.0deg); } /* Increased rotation */
-  60% { transform: rotate(-15.0deg); } /* Increased rotation */
-  80% { transform: rotate( 10.0deg); }
-  100% { transform: rotate(  0.0deg); }
-}
-
-/* About Section Avatar Container */
 .about-avatar-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;  /* Enable pointer events on this container */
 }
-
-/* Avatar Styling */
 .about-avatar {
-  width: 300px; /* Width of the avatar */
-  height: auto; /* Set fixed height to match the width */
+  width: 300px;
   max-width: 100%;
   transition: transform 0.4s ease;
   cursor: pointer;
-  position: relative;
-  z-index: 10;
-  pointer-events: auto;  /* Ensure the avatar itself can be clicked */
+}
+.about-avatar:hover {
+  transform: scale(1.05);
 }
 
-/* Limit hover/click area to the avatar */
-.about-avatar-container:hover .about-avatar {
-  transform: scale(1.05); /* Hover effect to enlarge */
+/* === Projects Section === */
+#projects {
+  padding-top: 6rem;
+  margin: 2rem auto;            /* ✅ Centered horizontally */
+  max-width: 1200px;            /* ✅ Limit width */
+  text-align: center;           /* ✅ Center headings */
+}
+#projects h2 {
+  color: #d0aaff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Make sure only the avatar itself is clickable */
-.about-avatar-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none; /* Prevent clicks outside the avatar */
+/* === Skillset Section === */
+.skillset-section {
+  text-align: center;
+  padding: 4rem 2rem;           /* ✅ More vertical space for layout */
+  background-color: transparent;
+  border-radius: 12px;
+  margin: 2rem auto;            /* ✅ Center the section */
+  max-width: 1200px;            /* ✅ Match width of other sections */
+}
+.skillset-section h2 {
+  color: #d0aaff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Optional: If you need to make the avatar more interactive on hover */
-.about-avatar-container:hover .about-avatar {
-  transform: scale(1.05); /* Hover effect to enlarge */
+/* === Contact Section === */
+#contact {
+  padding-top: 2rem;
+  margin-top: -2rem;
+  padding-bottom: 4rem;
+}
+.contact-section {
+  text-align: center;
+  padding: 2rem;
+}
+.contact-section h2 {
+  font-size: 2rem;
+  color: #d0aaff;
+  margin-bottom: 1rem;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.contact-button {
+  background: transparent;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #bf40bf;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.contact-button:hover {
+  transform: scale(1.05);
+}
+.contact-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+.contact-button p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: white;
 }
 
-/* Contact Form Container Styling */
+/* === Contact Form === */
 .contact-form-container {
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly dark background for the form */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 12px;
-  max-width: 600px; /* Make the container narrower */
-  margin: 2rem auto; /* Centered horizontally and space around */
+  max-width: 600px;
+  margin: 2rem auto;
   text-align: center;
   color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add slight shadow for better visual separation */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
-
 .contact-form-container h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #d0aaff; /* Light purple heading */
+  color: #d0aaff;
 }
-
 .contact-form-container form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
-
 .contact-form-container input,
 .contact-form-container textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #bf40bf; /* Purple border */
+  border: 2px solid #bf40bf;
   border-radius: 8px;
-  color: white;
   background-color: #121212;
+  color: white;
   font-size: 1rem;
 }
-
 .contact-form-container textarea {
-  height: 120px; /* Set a fixed height for the textarea */
-  resize: none;  /* Prevent textarea resizing */
+  height: 120px;
+  resize: none;
 }
-
 .contact-form-container button {
   padding: 1rem 2rem;
   background-color: #bf40bf;
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
   font-size: 1.2rem;
   transition: background-color 0.3s ease;
 }
-
 .contact-form-container button:hover {
-  background-color: #9333ea; /* Change the color when hovering */
+  background-color: #9333ea;
 }
-
-/* Error and Success Messages */
-.error-message,
-.success-message {
-  font-size: 1rem;
-  color: white;
-  margin-top: 1rem;
-}
-
 .error-message {
-  color: #ff6b6b; /* Red for error */
+  color: #ff6b6b;
 }
-
 .success-message {
-  color: #6c6; /* Green for success */
+  color: #6c6;
 }
 
-/* Contact Button Container Styling */
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem; /* Space between buttons */
-  margin-top: 2rem; /* Add some space above the buttons */
+/* === Wave Emoji Animation === */
+.wave {
+  display: inline-block;
+  animation: wave-animation 1.5s infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-25deg); }
+  40% { transform: rotate(20deg); }
+  60% { transform: rotate(-15deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
-/* Contact Button Styling */
-.contact-button {
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .welcome-text {
+    text-align: center;
+  }
+  .welcome-image {
+    margin-top: 2rem;
+  }
+  .about-section {
+    max-width: 90%;
+  }
+  .contact-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* === Skillset PNG Icon Styling Fix === */
+.skill-box img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(1); /* Turns image white */
+  margin-bottom: 0.5rem;
+}
+
+/* === Skill Box Consistency Fix === */
+.skill-box {
+  width: 150px;
+  height: 150px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #bf40bf; /* Light purple border */
   background-color: transparent;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid #bf40bf;  /* Purple border */
-  font-weight: bold;
   transition: transform 0.3s ease;
-  font-size: 0.9rem;  /* Reduced font size */
-}
-
-.contact-button:hover {
-  transform: scale(1.05);  /* Hover effect */
-}
-
-.contact-icon {
-  font-size: 1.5rem;  /* Smaller icon size */
-  margin-right: 8px;  /* Space between icon and text */
-}
-
-.contact-button p {
-  font-size: 0.9rem;  /* Adjust font size for text */
-  font-weight: normal;
   color: white;
 }
+
+/* === Skillset Container Layout === */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* === Skill Box Styling === */
+.skill-box {
+  width: 150px;
+  height: 150px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #bf40bf;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  color: white;
+  text-align: center;
+}
+
+.skill-box:hover {
+  transform: scale(1.05);
+}
+
+.skill-box p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  
+}
+
+/* === Font-based icon style === */
+.skill-box .icon svg {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.skill-box .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === PNG-based icon style === */
+.skill-box .skill-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(1); /* white color */
+  margin-bottom: 0.5rem;
+}
+
+/* === Tilted Card Wrapper Section === */
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6rem; /* Increased from 2rem to 3rem for more space */
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* === Individual Tilted Card === */
+.tilted-card {
+  width: 300px; /* Set a consistent width */
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #bf40bf;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.tilted-card:hover {
+  transform: scale(1.05);
+}
+
+.alert.alert-info {
+  text-align: center;
+}
+
+.below-cards {
+  text-align: center;
+}
+
+/* Slightly enlarge only the SQLAlchemy icon */
+
+
+.skill-box .sqlalchemy-icon  {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.skill-box.sqlalchemy-box {
+  justify-content: flex-start;
+}
+
+.skill-box.sqlalchemy-box p {
+  margin-top: -15px;
+}
+
+
+

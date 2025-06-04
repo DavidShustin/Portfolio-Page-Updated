@@ -1,5 +1,9 @@
 import React from 'react';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPython, FaNodeJs, FaGitAlt, FaDatabase } from 'react-icons/fa';
+import {
+  FaHtml5, FaCss3Alt, FaJsSquare,
+  FaReact, FaPython, FaNodeJs,
+  FaGitAlt, FaDatabase
+} from 'react-icons/fa';
 
 import jestIcon from '../../icons/jest.png';
 import expressIcon from '../../icons/express.png';
@@ -15,10 +19,10 @@ const skills = [
   { name: 'SQL', icon: <FaDatabase /> },
   { name: 'Node.js', icon: <FaNodeJs /> },
   { name: 'Git', icon: <FaGitAlt /> },
-  { name: 'Flask', icon: <img src={flaskIcon} alt="Flask" className="flask-icon" /> },
-  { name: 'Express', icon: <img src={expressIcon} alt="Express" className="express-icon" /> },
-  { name: 'SQLAlchemy', icon: <img src={sqlalchemyIcon} alt="SQLAlchemy" className="sqlalchemy-icon" /> },
-  { name: 'Jest', icon: <img src={jestIcon} alt="Jest" className="jest-icon" /> },
+  { name: 'Flask', icon: <img src={flaskIcon} alt="Flask" className="skill-img" /> },
+  { name: 'Express', icon: <img src={expressIcon} alt="Express" className="skill-img" /> },
+  { name: 'SQLAlchemy', icon: <img src={sqlalchemyIcon} alt="SQLAlchemy" className="skill-img sqlalchemy-icon" />, className: 'sqlalchemy-box' },
+  { name: 'Jest', icon: <img src={jestIcon} alt="Jest" className="skill-img" /> },
 ];
 
 const SkillSet = () => (
@@ -26,7 +30,7 @@ const SkillSet = () => (
     <h2>My Skill Set</h2>
     <div className="skills-container">
       {skills.map((skill, index) => (
-        <div key={index} className="skill-box">
+        <div key={index} className={`skill-box ${skill.className || ''}`}>
           <div className="icon">{skill.icon}</div>
           <p>{skill.name}</p>
         </div>
