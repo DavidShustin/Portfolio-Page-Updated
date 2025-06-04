@@ -37,7 +37,7 @@ export const Home = () => {
         setMessage(data.message);
         setError("");
         setEmail("");
-        
+
         setComment("");
       } else {
         setError(data.message || "Something went wrong");
@@ -57,7 +57,7 @@ export const Home = () => {
       <section id="home" className="welcome-section">
         <div className="home-container">
           <div className="welcome-content">
-            <div className="welcome-text">
+            <div className="welcome-text horizontal-intro">
               <h1>
                 Hello There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
@@ -75,7 +75,7 @@ export const Home = () => {
       <section id="about" className="about-section">
         <div className="container d-flex flex-wrap align-items-center justify-content-center row-gap-5">
           <div className="col-md-6 text-center">
-            <ScrollLink to="contact" smooth={true} duration={300} offset={-50}>
+            <ScrollLink to="contact" smooth={true} duration={300} offset={-80}>
               <img
                 src={avatarImage}
                 alt="My Avatar"
@@ -123,7 +123,6 @@ export const Home = () => {
       {/* CONTACT SECTION */}
       <section id="contact" className="contact-section">
         <h2>Contact Me</h2>
-        <p>Feel free to connect with me on my social platforms:</p>
 
         {/* Contact Form Container */}
         <div className="contact-form-container">
@@ -150,27 +149,28 @@ export const Home = () => {
           {message && <p className="success-message">{message}</p>}
         </div>
 
+        <p>Or Connect With Me on My Social Media Platforms!:</p>
         <div className="contact-buttons">
           {/* LinkedIn Button */}
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://www.linkedin.com/in/david-shustin-51948434b" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaLinkedin className="contact-icon" />
             LinkedIn
           </a>
 
           {/* GitHub Button */}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://github.com/DavidShustin" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaGithub className="contact-icon" />
             GitHub
           </a>
 
           {/* X (Twitter) Button */}
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://x.com/ItsLowkeyDavid" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaTwitter className="contact-icon" />
             X (Twitter)
           </a>
 
           {/* Slack Button */}
-          <a href="https://slack.com" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://4geeksacademy.slack.com/team/U06UZ5Y36AW" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaSlack className="contact-icon" />
             Slack
           </a>
