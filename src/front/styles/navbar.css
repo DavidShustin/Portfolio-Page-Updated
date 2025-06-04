@@ -6,20 +6,48 @@
   z-index: 999;
   width: 100%;
   max-width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(18, 18, 18, 0.3);
+  background: rgba(18, 18, 18, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 0;
   transition: all 0.5s ease;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column; /* allows content to expand downward */
+  min-height: 80px;
+  justify-content: center;
 }
 
 .custom-navbar.scrolled {
   width: 60%;
   max-width: 800px;
-  padding: 0.75rem 2rem;
+  padding: 0.4rem 1rem;
   background: rgba(18, 18, 18, 0.85);
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  justify-content: center;
+}
+
+/* Mobile navbar dropdown background */
+/* Ensures background extends with dropdown on mobile */
+.custom-navbar .navbar-collapse.show {
+  width: 100%;
+  background: transparent; /* inherits navbar bg */
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 1rem 0;
+  margin: 0;
+  box-shadow: none;
+  position: static; /* <- Let it stay in flow */
+}
+
+
+
+.custom-navbar .nav-link {
+	color: white !important;
+}
+
+.custom-navbar .nav-link:hover {
+	color: #bf40bf !important;
 }
 
 .navbar-content {
@@ -27,7 +55,9 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  font-family: inherit; /* or specify a different font */
 }
+
 
 /* Left: Logo */
 .nav-left {
@@ -37,12 +67,16 @@
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  padding-right: 6rem; /* ✅ Adjust this to shift the center/nav-right */
 }
 
 .navbar-brand:hover {
@@ -71,37 +105,109 @@
 .nav-center span:hover {
   color: #bf40bf;
 }
-
-/* Right: GitHub Repo Button */
+@media (min-width: 992px) {
 .nav-right {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
-}
+  align-items: center;
+  height: 100%; /* 🔧 ensures it stretches the full height of navbar */
+  padding-left: 1rem; /* optional spacing */
+  margin-left: rem !important;
+}}
 
 .repo-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* 🔧 fixed height to match navbar height */
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1px solid white;
+  border-radius: 6px;
   color: white;
   background: transparent;
-  border: 1px solid white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
   transition: background 0.3s, color 0.3s;
+  width: 120px;
 }
 
 .repo-button:hover {
-  background: #bf40bf;
+  background-color: #bf40bf;
   color: white;
 }
+
 .nav-center .nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.3s ease;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.6rem;
 }
 
 .nav-center .nav-link:hover {
   color: #bf40bf;
+}
+
+/* Make the collapsed dropdown menu white */
+
+
+/* Style nav links inside the collapsed dropdown */
+.navbar-collapse .nav-link {
+   /* Dark text for contrast */
+  font-weight: 600;
+}
+
+/* Add hover effect for better UX */
+.navbar-collapse .nav-link:hover {
+  color: #bf40bf !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-toggler {
+  border: 2px solid white !important;
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* On hover, change the border to light purple and slightly tint the background */
+.navbar-toggler:hover {
+  border-color: #bf40bf !important;
+  background-color: rgba(208, 170, 255, 0.1); /* Optional: faint purple background on hover */
+}
+.ms-auto {
+  justify-content: center;
+  
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.custom-navbar.scrolled .container {
+  height: auto;
+  margin-top: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media (min-width: 992px) {
+  .repo-button {
+    padding-left: 1rem; /* Adjust this until spacing feels balanced */
+  }
+}
+.d-lg-none.mt-3 {
+  display: flex;
+  justify-content: center;
 }

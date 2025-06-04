@@ -33,5 +33,10 @@ footer {
   background: #111;
   color: white;
   text-align: center;
-  height: 100px;
+  height: 3.5rem;
+}
+
+.footer-text {
+  padding-top: 0.5rem; /* or less */
+  margin-top: 0.5rem;  /* optional */
 }
