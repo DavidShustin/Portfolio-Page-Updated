@@ -186,9 +186,7 @@ return (
 
     {/* OPTIONAL FOOTER / EXTRAS */}
     <div className="below-cards">
-      <div className="alert alert-info">
-        {store.message || "Make sure to ask about the blob background in the home section."}
-      </div>
+      
       <p>
         This will be the link to the ReactBits Website{" "}
         <a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
