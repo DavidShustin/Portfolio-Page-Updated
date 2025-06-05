@@ -21,6 +21,11 @@ static_file_dir = os.path.join(os.path.dirname(
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+
+app.register_blueprint(api, url_prefix='/api')
+
 # database condiguration
 db_url = os.getenv("DATABASE_URL")
 if db_url is not None:
@@ -40,9 +45,9 @@ setup_admin(app)
 setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
-app.register_blueprint(api, url_prefix='/api')
 
-CORS(app, resources={r"/api/*": {"origins": "https://musical-zebra-x5r76v55pxv4fwgr-3000.app.github.dev"}}, supports_credentials=True)
+
+
 
 print("\n\nRegistered Routes:")
 for rule in app.url_map.iter_rules():
