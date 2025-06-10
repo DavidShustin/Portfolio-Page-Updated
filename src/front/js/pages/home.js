@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import TiltedCard from "../component/tiltedCard";
 import "../../styles/home.css";
 import avatarImage from "../../img/avatar.png";
+import myImage from "../../img/myImage.png";
 import BlobBackground from "../component/blobBackground";
 import SkillSet from "../component/SkillSet";
 import { FaLinkedin, FaGithub, FaSlack, FaTwitter } from 'react-icons/fa';  // Import the icons from react-icons
@@ -84,7 +85,7 @@ return (
         <div className="col-md-6 text-center">
           <ScrollLink to="contact" smooth={true} duration={300} offset={-80}>
             <img
-              src={avatarImage}
+              src={myImage}
               alt="My Avatar"
               className="img-fluid about-avatar"
               style={{ cursor: "pointer" }}
