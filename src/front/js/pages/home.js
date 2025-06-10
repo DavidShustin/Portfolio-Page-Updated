@@ -186,15 +186,7 @@ return (
     </section>
 
     {/* OPTIONAL FOOTER / EXTRAS */}
-    <div className="below-cards">
-      
-      <p>
-        This will be the link to the ReactBits Website{" "}
-        <a href="https://www.reactbits.dev/backgrounds/waves" target="_blank" rel="noopener noreferrer">
-          The ReactBits Site
-        </a>
-      </p>
-    </div>
+    
   </div>
 );
 };
