@@ -1,0 +1,53 @@
+/* Footer container */
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center !important;
+  gap: 10px;
+  justify-items: center;
+  padding: 20px 0;
+  background: #181827; /* or your preferred color */
+  color: #fff;
+}
+
+/* Left text */
+.footer-text-left {
+  grid-column: 1;
+  display: block;
+  align-self: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  padding-top: 5px;
+}
+
+/* Copyright center */
+.copyright-area {
+  grid-column: 2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Copyright image */
+.copyright-area img {
+  width: 28px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  margin: 0 4px;
+}
+
+/* Social icons right */
+.social-icons {
+  color: #bf40bf !important;
+  grid-column: 3;
+  align-self: center;
+  /* Add flex if using multiple icons: */
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.social-icons i {
+  color: #bf40bf !important;
+}

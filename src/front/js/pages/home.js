@@ -110,17 +110,17 @@ return (
     <section id="projects" className="section text-center">
       <h2>Projects</h2>
       <div className="card-wrapper">
-        <TiltedCard
+        {/* <TiltedCard
           imageSrc="https://wadsworthbruin.com/wp-content/uploads/2024/12/kendrick-900x1200.png"
           altText="Kendric Lamar GNX"
           captionText="Kendric Lamar GNX"
           containerHeight="250px"
           containerWidth="300px"
-        />
+        /> */}
         <TiltedCard
-          imageSrc="https://i.ytimg.com/vi/D7RHwt3vXSk/maxresdefault.jpg"
-          altText="Kendric Lamar GNX"
-          captionText="Ya Feel Me by La Reezy (ft. Samara Cyn)"
+          imageSrc="https://storytrails.in/wp-content/uploads/2022/04/comingsoon.png"
+          altText="New Projects Coming Soon"
+          captionText="New Projects Coming Soon"
           containerHeight="250px"
           containerWidth="300px"
         />
@@ -149,7 +149,7 @@ return (
             onChange={(e) => setComment(e.target.value)}
             required
           />
-          <button type="submit">Send Message</button>
+          <button className='send-button' type="submit">Send Email</button>
         </form>
 
         {/* Show error or success message */}
