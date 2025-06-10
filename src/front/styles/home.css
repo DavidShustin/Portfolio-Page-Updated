@@ -210,6 +210,7 @@ body {
 }
 .contact-button:hover {
   transform: scale(1.05);
+  color: #bf40bf;
 }
 .contact-icon {
   font-size: 1.5rem;
@@ -257,7 +258,7 @@ body {
   height: 120px;
   resize: none;
 }
-.contact-form-container button {
+.contact-form-container send-button {
   padding: 1rem 2rem;
   background-color: #bf40bf;
   color: white;
@@ -267,9 +268,10 @@ body {
   font-size: 1.2rem;
   transition: background-color 0.3s ease;
 }
-.contact-form-container button:hover {
-  background-color: #9333ea;
+.contact-form-container send-button:hover {
+  background-color: #d0aaff !important;
 }
+
 .error-message {
   color: #ff6b6b;
 }
@@ -468,4 +470,32 @@ img.about-avatar {
   }
 }
 
+.send-button {
+  background: #bf40bf;
+  color: #fff;
+  border: 2px solid #bf40bf;
+  border-radius: 8px;
+  padding: 0.7em 1.7em;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  transition:
+    background 0.45s cubic-bezier(0.4,0,0.2,1),
+    color 0.45s cubic-bezier(0.4,0,0.2,1),
+    transform 0.45s cubic-bezier(0.4,0,0.2,1),
+    box-shadow 0.45s cubic-bezier(0.4,0,0.2,1),
+    border-color 0.45s cubic-bezier(0.4,0,0.2,1);
+  outline: none;
+  will-change: transform, box-shadow, background, color, border-color;
+}
+
+.send-button:hover,
+.send-button:focus {
+  background: #a029a0;
+  color: #fff;
+  border-color: #fff; /* optional: adds more visual feedback */
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+}
 
