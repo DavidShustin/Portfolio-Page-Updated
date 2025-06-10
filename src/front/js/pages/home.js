@@ -119,7 +119,7 @@ return (
         /> */}
         <TiltedCard
           imageSrc="https://storytrails.in/wp-content/uploads/2022/04/comingsoon.png"
-          altText="New Projects Coming Soon"
+          altText=""
           captionText="New Projects Coming Soon"
           containerHeight="250px"
           containerWidth="300px"
