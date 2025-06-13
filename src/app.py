@@ -22,7 +22,14 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://portfolio-page-david-shustins-projects.vercel.app",
+            "https://literate-winner-69vq6499557qfrr9j-3000.app.github.dev"
+        ]
+    }
+})
 
 app.register_blueprint(api, url_prefix='/api')
 
