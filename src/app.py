@@ -23,10 +23,11 @@ app.url_map.strict_slashes = False
 
 
 CORS(app, resources={
-    r"/api/*": {
+    "/api/*": {
         "origins": [
+            "http://localhost:3000",
             "https://portfolio-page-david-shustins-projects.vercel.app",
-            "https://literate-winner-69vq6499557qfrr9j-3000.app.github.dev"
+            "https://portfolio-backend-production-2b46.up.railway.app"
         ]
     }
 })

@@ -17,18 +17,19 @@ api = Blueprint('api', __name__)
 
 @api.route("/contactUs", methods=["POST"])
 def contactUs():
-    data = request.json
-    email = data.get("email")
-    comment = data.get("comment")
+    data = request.get_json()
+    try:
+        send_email(
+            recipient="dshustin@gmail.com",
+            body=data["comment"],
+            subject="New contact from portfolio",
+            sender_email=data["email"]
+        )
+        return jsonify({"message": "Email sent successfully"}), 200
 
-    if not email:
-        return jsonify({"message": "Email is required"}), 400    
-    if not comment:
-        return jsonify({"message": "Please enter a comment."}), 400 
-
-    subject = "Email from Portfolio Page User"
-    send_email("dshustin@gmail.com", comment, subject, sender_email=email)
-    return jsonify({"message": "Thank you for your message!"}), 200
+    except Exception as e:
+        # log the exception (Railway logs will show it)
+        return jsonify({"error": str(e)}), 500
 
 
 

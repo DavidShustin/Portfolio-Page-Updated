@@ -4,7 +4,7 @@ import os
 
 MAIL_SERVER = 'smtp.gmail.com'  # Replace with your email provider's SMTP server
 MAIL_PORT = 465                 # TLS port
-MAIL_USE_TLS = True
+MAIL_USE_TLS = False
 MAIL_USERNAME = 'dshustin@gmail.com'  # Your email address
 MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')  # Your email password
 
