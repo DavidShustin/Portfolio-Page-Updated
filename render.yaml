@@ -5,20 +5,21 @@ services:
     env: python
     plan: free
 
-    # BUILD PHASE (no DB connection)
     buildCommand: |
       npm ci
       npm run build
       pipenv install --deploy --ignore-pipfile
 
-    # START PHASE (DB is available via DATABASE_URL)
     startCommand: |
+      # Run migrations against Render’s DATABASE_URL
       pipenv run flask db upgrade
-      pipenv run gunicorn wsgi --chdir src
+
+      # Bind Gunicorn to Render’s port env var
+      pipenv run gunicorn wsgi:application \
+        --bind 0.0.0.0:${PORT} \
+        --chdir src
 
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.10.6"
       - key: FLASK_APP
         value: src/app.py
       - key: FLASK_DEBUG
@@ -40,7 +41,6 @@ services:
       - key: MAIL_DEFAULT_SENDER
         value: dshustin@gmail.com
 
-# 2) Your Postgres database under `databases:`
 databases:
   - name: postgresql-trapezoidal-42170
     region: ohio
