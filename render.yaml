@@ -1,39 +1,24 @@
 services:
-  # 1) Postgres database (no change)
-  - type: postgres
-    name: postgresql-trapezoidal-42170
-    region: ohio
-    plan: free
-    databaseName: example
-
-  # 2) Web service
   - type: web
-    name: web   # you can rename this to "web" if you like
+    name: web
     region: ohio
     env: python
     plan: free
-    # --------------------------------------------------------
-    # BUILD PHASE: compile React & install Python deps,
-    # but do NOT import your Flask app (no DB yet)
+
+    # BUILD PHASE (no DB connection)
     buildCommand: |
-      # 1. Build your React app into public/ or dist/
       npm ci
       npm run build
-
-      # 2. Install Python dependencies in a locked virtualenv
       pipenv install --deploy --ignore-pipfile
-    # --------------------------------------------------------
-    # START PHASE: DB is now provisioned. Run migrations & start.
-    startCommand: |
-      # 3. Apply your Flask-Migrate scripts against Render's DATABASE_URL
-      pipenv run flask db upgrade
 
-      # 4. Finally launch Gunicorn pointing at your WSGI entrypoint
+    # START PHASE (DB is available via DATABASE_URL)
+    startCommand: |
+      pipenv run flask db upgrade
       pipenv run gunicorn wsgi --chdir src
-    # --------------------------------------------------------
+
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.6
+        value: "3.10.6"
       - key: FLASK_APP
         value: src/app.py
       - key: FLASK_DEBUG
@@ -54,3 +39,9 @@ services:
         value: <YOUR-GMAIL-APP-PASSWORD>
       - key: MAIL_DEFAULT_SENDER
         value: dshustin@gmail.com
+
+# 2) Your Postgres database under `databases:`
+databases:
+  - name: postgresql-trapezoidal-42170
+    region: ohio
+    plan: free
