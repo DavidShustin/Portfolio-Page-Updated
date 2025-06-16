@@ -20,6 +20,8 @@ services:
         --chdir src
 
     envVars:
+      - key: PIPENV_IGNORE_DOTENV
+        value: "1"
       - key: FLASK_APP
         value: src/app.py
       - key: FLASK_DEBUG
