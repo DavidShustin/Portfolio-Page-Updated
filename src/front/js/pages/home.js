@@ -137,9 +137,17 @@ export const Home = () => {
             </button>
           </form>
 
-          {/* Feedback */}
-          {error && <p className="error-message">{error}</p>}
-          {message && <p className="success-message">{message}</p>}
+          {/* ——— FEEDBACK: replaced plain <p> with Bootstrap alerts ——— */}
+          {error && (
+            <div className="alert alert-danger mt-3" role="alert">
+              {error}
+            </div>
+          )}
+          {message && (
+            <div className="alert alert-success mt-3" role="alert">
+              {message}
+            </div>
+          )}
         </div>
 
         <p>Or Connect With Me on My Social Media Platforms</p>
