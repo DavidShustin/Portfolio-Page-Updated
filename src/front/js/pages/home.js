@@ -22,8 +22,9 @@ export const Home = () => {
 
   // 3) Initialize EmailJS with your Public Key
   useEffect(() => {
-    emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
-  }, []);
+  console.log("🔑 EmailJS User ID is:", process.env.REACT_APP_EMAILJS_USER_ID);
+  emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+}, []);
 
   // 4) Send via EmailJS instead of fetch
   const handleSubmit = (e) => {
