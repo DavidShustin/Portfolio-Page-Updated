@@ -22,7 +22,7 @@ export const Home = () => {
 
   // 3) Initialize EmailJS with your Public Key
   useEffect(() => {
-  console.log("🔑 EmailJS User ID is:", process.env.REACT_APP_EMAILJS_USER_ID);
+  
   emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
 }, []);
 
