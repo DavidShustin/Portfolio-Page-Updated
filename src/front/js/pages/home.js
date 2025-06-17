@@ -22,9 +22,9 @@ export const Home = () => {
 
   // 3) Initialize EmailJS with your Public Key
   useEffect(() => {
-  
-  emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
-}, []);
+
+    emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+  }, []);
 
   // 4) Send via EmailJS instead of fetch
   const handleSubmit = (e) => {
@@ -125,13 +125,24 @@ export const Home = () => {
         <div className="contact-form-container">
           <h3>Send Me a Direct Email</h3>
           <form ref={formRef} onSubmit={handleSubmit}>
+            {/* 1) Sender’s name */}
+            <input
+              type="text"
+              name="from_name"
+              placeholder="Your Full Name"
+              required
+            />
             <input
               type="email"
               name="from_email"
               placeholder="Your Email Address"
               required
             />
-            <textarea name="message" placeholder="Your Message" required />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            />
             <button className="send-button" type="submit">
               Send Email
             </button>
