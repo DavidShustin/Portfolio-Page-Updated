@@ -5,8 +5,9 @@ import "../../styles/footer.css"
 export const Footer = () => (
 	<footer id="footer">
 		<p className="footer-text-left">
-			Made with <i className="fa fa-heart text-danger"></i> by{" "}
+			Made by {" "}
 			<a href="https://github.com/DavidShustin?tab=repositories">David Shustin</a>
+			
 		</p>
 		<div className="copyright-area">
 			Copyright

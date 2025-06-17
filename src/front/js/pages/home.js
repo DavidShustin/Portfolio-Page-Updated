@@ -157,7 +157,7 @@ return (
         {message && <p className="success-message">{message}</p>}
       </div>
 
-      <p>Or Connect With Me on My Social Media Platforms oh yea</p>
+      <p>Or Connect With Me on My Social Media Platforms</p>
       <div className="contact-buttons">
         {/* LinkedIn Button */}
         <a href="https://www.linkedin.com/in/david-shustin-51948434b" target="_blank" rel="noopener noreferrer" className="contact-button">
