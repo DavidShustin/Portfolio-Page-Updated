@@ -39,7 +39,7 @@ export const Navbar = () => {
 
 				{/* Hamburger Button for Mobile */}
 				<button
-					className="navbar-toggler"
+					className="navbar-toggler ms-auto"
 					type="button"
 					onClick={toggleNavbar}
 				>

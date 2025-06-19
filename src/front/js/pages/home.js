@@ -60,7 +60,7 @@ export const Home = () => {
                   👋🏻
                 </span>
               </h1>
-              <h2>My name is David Shustin</h2>
+              <h2 className="intro-name">My name is David Shustin</h2>
             </div>
             <div className="welcome-image">
               <img

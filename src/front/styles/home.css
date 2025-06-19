@@ -499,3 +499,22 @@ img.about-avatar {
   box-shadow: 0 8px 32px rgba(0,0,0,0.16);
 }
 
+.intro-name {
+  /* never smaller than 1.25rem, ideally 5vw, never larger than 2.5rem */
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+
+.welcome-text .intro-name {
+  /* desktop default */
+  
+  display: flex;
+}
+
+@media (max-width: 991.98px) {
+  .welcome-text .intro-name {
+    /* never smaller than 1.2rem, scale with viewport, never bigger than 2rem */
+    font-size: clamp(2rem, 4vw, 2rem);
+  }
+}
