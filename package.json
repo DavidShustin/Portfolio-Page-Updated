@@ -7,10 +7,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-  "dev": "webpack-dev-server --config webpack.dev.js --port 3000",
-  "start": "webpack-dev-server --config webpack.dev.js --port 3000",
-  "build": "webpack --config webpack.prod.js"
-},
+		"dev": "webpack-dev-server --config webpack.dev.js --port 3000",
+		"start": "webpack-dev-server --config webpack.dev.js --port 3000",
+		"build": "webpack --config webpack.prod.js"
+	},
 	"author": {
 		"name": "Alejandro Sanchez",
 		"url": "http://alesanchezr.com/"
@@ -78,6 +78,7 @@
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
 		"@popperjs/core": "^2.11.8",
+		"@vercel/speed-insights": "^1.2.0",
 		"bootstrap": "^5.3.6",
 		"font-awesome": "^4.7.0",
 		"framer-motion": "^4.1.17",
