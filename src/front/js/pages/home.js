@@ -119,11 +119,22 @@ const handleSubmit = (e) => {
         <h2>Projects</h2>
         <div className="card-wrapper">
           <TiltedCard
-            imageSrc="https://storytrails.in/wp-content/uploads/2022/04/comingsoon.png"
-            altText=""
-            captionText="New Projects Coming Soon"
+            imageSrc={require("../../img/Toro-Marketing.png").default}
+            altText="Toro Marketing Website"
+            captionText="Toro Marketing"
             containerHeight="250px"
             containerWidth="300px"
+            displayOverlayContent={true}
+            overlayContent={
+              <a 
+                href="https://www.toro-marketing.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="demo-button"
+              >
+                View Demo
+              </a>
+            }
           />
         </div>
         <SkillSet />
