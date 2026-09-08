@@ -22,6 +22,7 @@ export default function TiltedCard({
     showTooltip = true,
     overlayContent = null,
     displayOverlayContent = false,
+    href = null,
 }) {
     const ref = useRef(null);
 
@@ -78,10 +79,12 @@ export default function TiltedCard({
             style={{
                 height: containerHeight,
                 width: containerWidth,
+                cursor: href ? "pointer" : "default",
             }}
             onMouseMove={handleMouse}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => href && window.open(href, "_blank", "noopener,noreferrer")}
         >
             
 

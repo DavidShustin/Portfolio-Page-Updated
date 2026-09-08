@@ -128,17 +128,7 @@ export const Home = () => {
             captionText="Toro Marketing"
             containerHeight="250px"
             containerWidth="300px"
-            displayOverlayContent={true}
-            overlayContent={
-              <a
-                href="https://www.toro-marketing.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="demo-button"
-              >
-                View Demo
-              </a>
-            }
+            href="https://toro-marketing-dev.vercel.app"
           />
         </div>
         <SkillSet />
