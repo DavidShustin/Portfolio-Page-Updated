@@ -21,43 +21,47 @@ export const Home = () => {
   const [error, setError] = useState("");
 
   // 3) Initialize EmailJS with your Public Key
-useEffect(() => {
-  console.log("EmailJS User ID:", process.env.REACT_APP_EMAILJS_USER_ID);
-  console.log("EmailJS Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
-  console.log("EmailJS Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
-  
-  if (process.env.REACT_APP_EMAILJS_USER_ID) {
-    emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
-    console.log("EmailJS initialized successfully");
-  } else {
-    console.error("EmailJS User ID is missing!");
-  }
-}, []);
+  useEffect(() => {
+    console.log("EmailJS User ID:", process.env.REACT_APP_EMAILJS_USER_ID);
+    console.log("EmailJS Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log("EmailJS Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
 
-// 4) Send via EmailJS instead of fetch
-const handleSubmit = (e) => {
-  console.log("Form submitted!"); // Add this
-  e.preventDefault();
-  console.log("Default prevented"); // Add this
-  
-  emailjs
-    .sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      formRef.current
-    )
-    .then(() => {
-      console.log("Email sent!"); // Add this
-      setMessage("Email sent successfully! 🎉");
-      setError("");
+    if (process.env.REACT_APP_EMAILJS_USER_ID) {
+      emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+      console.log("EmailJS initialized successfully");
+    } else {
+      console.error("EmailJS User ID is missing!");
+    }
+  }, []);
+
+  // 4) Send via EmailJS instead of fetch
+  const handleSubmit = (e) => {
+    console.log("Form submitted!"); // Add this
+    e.preventDefault();
+    if (formRef.current.company_website.value) {
       formRef.current.reset();
-    })
-    .catch((err) => {
-      console.error("EmailJS error:", err);
-      setError("Oops—unable to send email.");
-      setMessage("");
-    });
-};
+      return;
+    }
+    console.log("Default prevented"); // Add this
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current
+      )
+      .then(() => {
+        console.log("Email sent!"); // Add this
+        setMessage("Email sent successfully! 🎉");
+        setError("");
+        formRef.current.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setError("Oops—unable to send email.");
+        setMessage("");
+      });
+  };
 
   return (
     <div id="top" className="home-container">
@@ -126,9 +130,9 @@ const handleSubmit = (e) => {
             containerWidth="300px"
             displayOverlayContent={true}
             overlayContent={
-              <a 
-                href="https://www.toro-marketing.com" 
-                target="_blank" 
+              <a
+                href="https://www.toro-marketing.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="demo-button"
               >
@@ -148,6 +152,14 @@ const handleSubmit = (e) => {
         <div className="contact-form-container">
           <h3>Send Me a Direct Email</h3>
           <form ref={formRef} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="company_website"
+              style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, width: 0 }}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             {/* 1) Sender’s name */}
             <input
               type="text"
